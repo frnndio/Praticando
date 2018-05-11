@@ -31,7 +31,7 @@ public class RelatorioBasico extends Relatorio {
 	@Override
 	public void apresentarRelatorio(ArrayList<Cliente> listaClientes) {
 		for(Cliente cli : listaClientes) {
-			System.out.println("Nome: " + cli.getNome() + ", tem " + cli.getIdade() + " anos e é do sexo " + cli.getSexo() + ".");
+			System.out.println("Nome: " + cli.getNome() + ", tem " + cli.getIdade() + " anos, é do sexo " + cli.getSexo() + " e seu salário é de " + cli.getSalario() + " reais.");
 		}
 	}
 
