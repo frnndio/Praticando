@@ -2,8 +2,6 @@ package Relatorio;
 
 import java.util.ArrayList;
 
-import Praticando.Cliente;
-
 public abstract class Relatorio {
 	
 	public abstract Cliente tipoDoRelatorio(String line);

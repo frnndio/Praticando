@@ -29,13 +29,21 @@ public class Leitor {
 		return lines;
 	}
 
-	public ArrayList<Object> lerRelatorio(String url, Relatorio relatorio) {
+	public ArrayList<Cliente> lerRelatorio(String url, Relatorio relatorio) {
 		path = Paths.get(url);
-		ArrayList<Object> lines = null;
+		ArrayList<Cliente> lines = null;
 		try (BufferedReader reader = Files.newBufferedReader(path, utf8)) {
 			lines = new ArrayList<>();
+			int aux = 0;
 			while((line = reader.readLine()) != null) {
-				lines.add(relatorio.tipoDoRelatorio(line));
+				if(aux < 3) {
+					relatorio.tipoDoRelatorio(line);					
+				}
+				if(aux == 3) {
+					lines.add(relatorio.tipoDoRelatorio(line));
+					aux = -1;
+				}
+				aux++;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
