@@ -2,7 +2,7 @@ package Praticando;
 
 import java.util.Arrays;
 
-public class selectionSort {
+public class SelectionSort {
 	
 	public static void sort(String[] a) {
 		for (int i = 0; i < a.length - 1; i++) {
