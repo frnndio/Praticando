@@ -34,16 +34,13 @@ public class Leitor {
 		ArrayList<Cliente> lines = null;
 		try (BufferedReader reader = Files.newBufferedReader(path, utf8)) {
 			lines = new ArrayList<>();
-			int aux = 0;
 			while((line = reader.readLine()) != null) {
-				if(aux < 3) {
-					relatorio.tipoDoRelatorio(line);					
-				}
-				if(aux == 3) {
+				if(relatorio.tipoDoRelatorioFinalizado()) {
 					lines.add(relatorio.tipoDoRelatorio(line));
-					aux = -1;
+					relatorio.tipoDoRelatorioFinalizado(false);
+				} else {
+					relatorio.tipoDoRelatorio(line);
 				}
-				aux++;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

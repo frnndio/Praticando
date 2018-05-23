@@ -7,18 +7,21 @@ public class RelatorioBasico extends Relatorio {
 	
 	Cliente cliente = null;
 	int aux = 0;
+	boolean finalizado = false;
 	
 	@Override
 	public Cliente tipoDoRelatorio(String line) {
 		if(aux == 0) {
 			cliente = new Cliente();
 			cliente.setNome(line);
+			tipoDoRelatorioFinalizado(false);
 		}
 		if(aux == 1) {
 			cliente.setSexo(line);
 		}
 		if(aux == 2) {
 			cliente.setIdade(Integer.parseInt(line));
+			tipoDoRelatorioFinalizado(true);
 		}
 		if(aux == 3) {
 			cliente.setSalario(Double.parseDouble(line));
@@ -26,6 +29,14 @@ public class RelatorioBasico extends Relatorio {
 		}
 		aux++;
 		return cliente;
+	}
+	
+	public boolean tipoDoRelatorioFinalizado() {
+		return finalizado;
+	}
+	
+	public void tipoDoRelatorioFinalizado(boolean finalizado) { 
+		this.finalizado = finalizado;
 	}
 	
 	@Override

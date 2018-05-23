@@ -1,0 +1,16 @@
+Fernando
+masculino
+28
+2000
+Rodrigo
+masculino
+20
+1500
+Larissa
+feminino
+30
+1200
+Rebeca
+feminino
+22
+2200

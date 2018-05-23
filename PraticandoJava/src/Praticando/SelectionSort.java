@@ -32,8 +32,7 @@ public class SelectionSort {
 		frutas.add("Abacaxi");
 		
 		Collections.sort(frutas);
-		System.out.println(frutas.toString());
-		
+		System.out.println(frutas.toString());		
 
 	}
 }
